@@ -1,0 +1,487 @@
+/* Universal Styles */
+/* I will only make ones I didnt get or that I think are interesting */
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.main-content {
+  position: relative;
+  top: 5.3125rem; /* To offset for fixed header. */
+}
+
+.center {
+  text-align: center;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #4a4a4a;
+  color: white;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  /* height: auto; < they didnt include this */
+}
+
+@media only screen and (max-width: 895px) {
+  /*the big change is they swapped all of these 760 to 895 for some reason*/
+  .main-content {
+    top: 2.5625rem;
+  }
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  border-bottom: solid 1px #c6c1c1;
+  background-color: white;
+}
+
+header .content {
+  display: flex;
+  align-items: center;
+  padding: 1.875rem;
+}
+
+header .logo {
+  flex: 1;
+  color: #4A4A4A;
+  font-size: 1.5rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+header nav ul {
+  display: flex;
+}
+
+nav li {
+  padding-left: 3.5rem;
+}
+
+nav a {
+  vertical-align: bottom;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+/* they added this code, idk why they even need it at all like in the html and css here. last child lets them hide it.  */
+nav .button {
+  padding: 0.1875rem 0.5rem;
+  background-color: #9dc20b;
+  line-height: 1.6;
+  color: #fff
+}
+
+nav li:last-child {
+  display: none;
+}
+
+header .icon {
+  width: 1rem;
+  padding-left: 0.75rem;
+}
+
+header .mobile {
+  display: none;
+}
+
+/* again the major change is making this 760 change to 895. 
+this is new, this is probably why it works */
+@media only screen and (max-width: 895px) {
+  nav li:last-child {
+    display: block;
+  }
+  
+  /* they changed this from .5 rem and 0 */
+  header .content {
+    padding: 1rem 1rem;
+  }
+}
+
+/*they made another media query here at this random 600*/
+@media only screen and (max-width: 600px) {
+  header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: block;
+    width: 100%;
+  }
+
+  header .content {
+    padding: .5rem 0;
+  }
+
+  header .mobile ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  header .mobile li {
+    padding: 0;
+  }
+
+  /* they removed this by doing the last child stuff above
+  header .mobile .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  } */
+}
+
+/* Sign Up Section */
+
+#sign-up-section {
+  display: flex;
+  justify-content: flex-start;
+  /* they added flex start and the background image to this:
+  background-image: url(../images/banner-landingpage.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  and they align-items is flex start*/
+  align-items: center;
+  height: 43.5rem;
+}
+
+.banner {
+  background-image: url(../images/banner-landingpage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#sign-up-cta {
+  /* they added position relative, and top 171 
+  position: relative;
+  top: 171px;*/
+  padding: 0 5rem 2.5rem 5rem;
+  margin-left: 6.25rem;
+  border: solid 1px #979797;
+  border-radius: 4px;
+  background-color: #9dc20b;
+}
+
+#sign-up-cta .content {
+  width: 25.625rem;
+  margin-top: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: white;
+}
+
+#sign-up-cta h1 {
+  font-size: 3.125rem;
+}
+
+#sign-up-cta h2 {
+  font-size: 2.25rem;
+}
+
+/* i added this, but it didnt take */
+#sign-up-cta span {
+  font-weight: 400;
+}
+
+#sign-up-cta span strong {
+  font-weight: bold;
+}
+
+#sign-up-cta .cursive {
+  font-family: "Damion", cursive;
+}
+
+#sign-up-cta .striking {
+  font-family: "Rubik", sans-serif;
+  padding-bottom: .75rem;
+}
+
+#sign-up-cta .button {
+  margin-top: 1.625rem;
+  padding: 1.25rem 7.25rem;
+}
+
+/* again they changed to 895 */
+@media only screen and (max-width: 895px) {
+  #sign-up-section {
+    align-items: center;
+    justify-content: center;
+    height: 28rem;
+  }
+
+  #sign-up-cta {
+    /*position: static;
+    width: auto;
+    height: auto;*/
+    background-color: transparent;
+    border: none;
+    margin-left: 0;
+  }
+
+  #sign-up-cta .content {
+    margin-top: 0;
+  }
+
+  #sign-up-cta .email {
+    display: none;
+  }
+
+  #sign-up-cta h1 {
+    font-size: 3.125rem;
+  }
+
+  #sign-up-cta h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* they bumped up their mobile from 450 to 600 here */
+@media only screen and (max-width: 600px) {
+  #sign-up-section {
+    height: 20rem;
+  }
+
+  #sign-up-cta h1 {
+    font-size: 2.25rem;
+  }
+
+  #sign-up-cta h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Features Section */
+
+#features-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 5%;
+  background-color: #f3f3f3;
+}
+
+.feature {
+  flex: 1;
+  /* i added an extra .5 on the bottom */
+  padding: 2rem 2rem 2.5rem 2rem;
+  margin: 0px 1.25rem;
+  background-color: white;
+}
+
+.feature .image-container {
+  /* they kept it with 90 and 65 and centered. i added margin bottom */
+  width: 90%;
+  height: 65%;
+  margin: 0 auto 2.5rem auto;
+}
+
+/*they added this to give the margin i added above? 
+.feature .content {
+  padding: 2.5rem 0;
+}*/
+
+.feature h2 {
+  padding-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.feature h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #4a4a4a;
+}
+
+/* for some reason this was set to 890 and they went back to the consistent 895 here
+but they also swapped the 760 below to 600 */
+@media only screen and (max-width: 895px) {
+  /* this is new, i think it cleans up the edge here*/
+  #features-section {
+    padding: 1rem;
+  }
+  .feature {
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+
+/* they changed from 1.125rem and font weight normal */
+  .feature h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .feature h3 {
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #features-section {
+    flex-flow: column;
+    padding: 0;
+  }
+
+  .feature {
+    margin: 0;
+    padding: 1.25rem 1rem 0 1rem;
+  }
+  /*they added this, presumably to fix small padding*/
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
+  }
+}
+
+/* Filters Section */
+
+#filters-section {
+  padding: 4rem 0;
+  background-color: #4a4a4a;
+}
+
+#filters-section .content {
+  padding: 0 .625rem;
+  margin-bottom: 5rem;
+}
+
+#filters-section .content h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+  /* i added this */
+  padding-bottom: 0.5rem;
+}
+
+#filters-section .content h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: white;
+}
+
+#filters-section .images-container {
+  max-width: 100%;
+  display: flex;
+  padding: 0 1%;
+}
+
+/* they ditched 895 here for 600. it was 760 */
+@media only screen and (max-width: 600px) {
+  #filters-section {
+    padding: 1.5rem 0 0 0;
+  }
+
+  #filters-section .content {
+    margin-bottom: 1rem;
+  }
+
+  #filters-section .content h2 {
+    padding-bottom: .625rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: normal;
+  }
+
+  #filters-section .content h3 {
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+
+  #filters-section .images-container {
+    padding: 0;
+  }
+
+  #filters-section .extra {
+    display: none;
+  }
+}
+
+/* Quotes Section */
+
+#quotes-section {
+  background-color: #f3f3f3;
+}
+
+#quotes-section .content {
+  /*padding: 5rem 0;
+  this is one of the bigger messups, they dropped padding
+  and just made this whole thing a flex object*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+#quotes-section .quote {
+  padding-right: 1.875rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+#quotes-section .quote-citation {
+  height: 1.875rem;
+}
+
+/*back to 895 and from 1.875 + .625 to 3 and 1.5 */
+@media only screen and (max-width: 895px) {
+  #quotes-section .content {
+    padding: 3rem 1.5rem;
+  }
+
+  #quotes-section .quote {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  /* damn i got most of the class that werent defined "." but missed this one */
+  #quotes-section .quote-citation {
+    display: block;
+    padding-top: 1rem;
+    margin: auto;
+  }
+}
+
+/* Footer */
+
+footer {
+  background-color: #9b9b9b;
+  padding: 1.5rem 2rem;
+}
+
+footer .content {
+  color: white;
+  display: flex;
+  font-size: 0.75rem;
+}
+
+footer .copyright {
+  flex-grow: 1;
+}
+
+/*last change to 600 */
+@media only screen and (min-width: 600px) {
+  footer .content {
+    font-size: .625rem;
+  }
+}
